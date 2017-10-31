@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta name="keywords" content="">  
+    <meta name="description" content="">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no" name="format-detection">
+    <title>抽一个奖</title>
+    <link rel="stylesheet" type="text/css" href="css/theajack.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="css/icon.css"/>
+  <head>
+  <body>
+    <div id="title">抽奖设置</div>
+    <div id="inputWrapper" >
+      <textarea name="" id="list-input" cols="30" rows="10" placeholder="请输入抽奖选项，一行是一个选项，空行表示不中奖的选项"></textarea>
+      <input type="number" id="times-input" placeholder="请输入抽奖次数"/>
+      <div id="btn-wrapper">
+        <span class="btn" onclick="initSet()">提交设置</span>
+        <span class="btn" onclick="initSetDefault()">使用默认设置</span>
+      </div>
+    </div>
+    <div id="circle-wrapper" j-bind="main">
+      <div id="circle" j-run="initTop">
+        <div id="list" j-for="list" j-run="initPosition">
+          <div class="lotto-item" j-text="$each"></div>
+        </div>
+        <div id="needle-wrapper" j-on="click:start">
+          <div id="needle-text">开始<br>抽奖</div>
+          <div id="needle"></div>
+        </div>
+      </div>
+      <div class="btn reload" j-on="click:reload">重新来过</div>
+    </div>
+    <div class="copyright">© 2017 TheaJack All Right Reserved</div>
+    <script type="text/javascript" src="js/jetter2.0.js"></script>
+    <script type="text/javascript" src="js/jet.js"></script>
+    <script type="text/javascript" src="js/bg.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+  </body>
+</html>
